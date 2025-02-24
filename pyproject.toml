@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orchestra"
+version = "0.1.0"
+description = "A CLI tool for managing and running tasks from a YAML file."
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "click",
+    "pyyaml"
+]
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "pytest"
+]
+
+[project.scripts]
+orchestra = "orchestra.cli:cli"
+
+[tool.setuptools]
+packages = ["orchestra"]
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
